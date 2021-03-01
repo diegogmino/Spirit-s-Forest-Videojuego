@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Start_Boss : MonoBehaviour
 {
 
     private GameObject boss;
     private Animator bossAnimator;
+    private AudioManagerController amc;
+
+    public AudioClip bossMusic;
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +19,7 @@ public class Start_Boss : MonoBehaviour
 
         boss = GameObject.FindGameObjectWithTag("Boss");
         bossAnimator = boss.GetComponent<Animator>();
+        amc = FindObjectOfType<AudioManagerController>();
 
     }
 
@@ -22,6 +28,8 @@ public class Start_Boss : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             bossAnimator.SetBool("Start", true);
+            amc.ChangeMusicBoss(bossMusic);
+            boss.GetComponent<BossController>().showHeart(); // Mostramos la vida del boss                       
         }
     }
 }

@@ -135,4 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellSpeed: 15
-  spellLife: 2
+  spellLife: 2.8

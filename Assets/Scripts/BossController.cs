@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -12,6 +13,17 @@ public class BossController : MonoBehaviour
     public Transform spellSpawner;
     public GameObject spell;
 
+    public Image heart;
+    public Sprite noHeart;
+    public int numHeart;
+    public RectTransform posFirstHeart;
+    public Canvas canvas;
+    public int offSet;
+
+    // Sounds
+    public GameObject hurtSound;
+    public GameObject spellSound;
+
     public float health = 20f;
 
     // Start is called before the first frame update
@@ -22,6 +34,8 @@ public class BossController : MonoBehaviour
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
 
+        heart.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -30,20 +44,40 @@ public class BossController : MonoBehaviour
         
     }
 
+    public void showHeart() {
+
+        heart.enabled = true;
+
+        Transform posHeart = posFirstHeart;
+
+        for (int i = 0; i < numHeart; i++) {
+
+            Image newHeart = Instantiate(heart, posHeart.position, Quaternion.identity);
+            newHeart.transform.parent = canvas.transform;
+            posHeart.position = new Vector2(posHeart.position.x + offSet, posHeart.position.y);
+
+        }
+
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
 
         if (col.gameObject.tag == "Spell")
         {
 
+            Instantiate(hurtSound);
             anim.SetTrigger("Hurt");
             health--;
-            Invoke("ReAttack", 2f);
+            canvas.transform.GetChild(numHeart + 1).gameObject.GetComponent<Image>().sprite = noHeart;
+            numHeart -= 1;
+            Invoke("ReAttack", 0.5f);
             if (health == 0)
             {
                 anim.SetTrigger("Die");
                 Destroy(rbd2, 0f);
                 Destroy(collider, 0f);
+                heart.enabled = false;
             }
 
         }
@@ -62,16 +96,18 @@ public class BossController : MonoBehaviour
     public void Attack()
     {
         Invoke("Slash", 1f);
+        
     }
 
     private void Slash()
     {
-        anim.SetTrigger("Attack");
+        anim.SetTrigger("Attack"); 
     }
 
     public void SpellThrow()
     {
         Instantiate(spell, spellSpawner.position, spellSpawner.rotation);
+        Instantiate(spellSound);
     }
 
 }

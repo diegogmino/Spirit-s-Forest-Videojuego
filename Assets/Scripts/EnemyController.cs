@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
     public Transform target;
     public float life = 10f;
     public float damage = 0f;
+    //Sounds
+    public GameObject HurtSound;
 
     private Vector3 start, end;
     private Rigidbody2D rbd2;
@@ -63,12 +65,11 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        
-
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag == "Spell") {
+            Instantiate(HurtSound);
             anim.SetTrigger("Hurt");
             life--;
             if(life == 0) {
@@ -87,6 +88,5 @@ public class EnemyController : MonoBehaviour
         }
 
     }
-
 
 }

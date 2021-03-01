@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpiritController : MonoBehaviour
 
@@ -13,6 +14,16 @@ public class SpiritController : MonoBehaviour
     public float health = 5f;
     public Transform spellSpawner;
     public GameObject spell;
+    public Image heart;
+    public Sprite noHeart;
+    public int numHeart;
+    public RectTransform posFirstHeart;
+    public Canvas canvas;
+    public int offSet;
+    // Sounds
+    public GameObject spellSound;
+    public GameObject jumpSound;
+    public GameObject hurtSound;
 
     private Rigidbody2D rbd2;
     private Animator anim;
@@ -27,6 +38,17 @@ public class SpiritController : MonoBehaviour
         rbd2 = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
+
+        Transform posHeart = posFirstHeart;
+
+        for (int i = 0; i < numHeart; i++) {
+
+            Image newHeart = Instantiate(heart, posHeart.position, Quaternion.identity);
+            newHeart.transform.parent = canvas.transform;
+            posHeart.position = new Vector2(posHeart.position.x + offSet, posHeart.position.y);
+
+        }
+
     }
 
     // Update is called once per frame
@@ -38,6 +60,9 @@ public class SpiritController : MonoBehaviour
             if(grounded) {
                 jump = true;
                 doubleJump = true;
+
+                Instantiate(jumpSound);
+
             } else if(doubleJump) {
                 jump = true;
                 doubleJump = false;
@@ -98,34 +123,38 @@ public class SpiritController : MonoBehaviour
     }
 
     public void ThrowSpell()
-    {  
-        movement = false;
+    {       
         Instantiate(spell, spellSpawner.position, spellSpawner.rotation);
-        Invoke("EnableMovement", 0.7f);   
+        Instantiate(spellSound);  
 
     }
 
     public void EnemyHit(float enemyPosX)
     {
 
+        Instantiate(hurtSound);
         health -= 1f;
+        canvas.transform.GetChild(numHeart + 1).gameObject.GetComponent<Image>().sprite = noHeart;
+        
+        numHeart -= 1;
 
         if (health == 0)
         {
             anim.SetTrigger("Die");
             rbd2.AddForce(Vector2.up * 0);
 
-            Invoke("Respawn", 3f);
+            Invoke("Respawn", 2f);
 
         }
         else
         {
-            float side = Mathf.Sign(enemyPosX - transform.position.x);
-            rbd2.AddForce(Vector2.left * side * jumpPower, ForceMode2D.Impulse); // Ejecutamos una fuerza para separar al jugador del enemigo
+            //float side = Mathf.Sign(enemyPosX - transform.position.x);
+            //rbd2.AddForce((Vector2.left * side * jumpPower) * 5, ForceMode2D.Impulse); // Ejecutamos una fuerza para separar al jugador del enemigo
             anim.SetTrigger("Hit");
-            movement = false;
-            rbd2.isKinematic = true; // Deshabilitamos el RigidBody2D
-            Invoke("EnableMovement", 0.7f);
+            //movement = false;
+            //rbd2.isKinematic = true; // Deshabilitamos el RigidBody2D
+            collider.enabled = false;
+            Invoke("EnableMovement", 1.5f);
         }
         
     }
@@ -141,8 +170,6 @@ public class SpiritController : MonoBehaviour
         
     }
 
-    
-
     void Respawn()
     {
 
@@ -154,7 +181,9 @@ public class SpiritController : MonoBehaviour
 
     void EnableMovement()
     {
-        movement = true;
-        rbd2.isKinematic = false;
+        //movement = true;
+        //rbd2.isKinematic = false;
+        collider.enabled = true;
     }
+
 }

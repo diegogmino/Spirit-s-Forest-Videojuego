@@ -1,22 +1,18 @@
 ﻿<Properties StartupConfiguration="{8AE64A90-87B5-342A-E976-532482D5DCF6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SpiritController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BossController.cs">
     <Files>
       <File FileName="Assets/Scripts/CheckGround.cs" Line="18" Column="20" />
-      <File FileName="Assets/Scripts/SpellController.cs" Line="45" Column="38" />
-      <File FileName="Assets/Scripts/SpiritController.cs" Line="92" Column="113" />
-      <File FileName="Assets/Scripts/EnemyController.cs" />
-      <File FileName="Assets/Scripts/BossController.cs" Line="41" Column="33" />
+      <File FileName="Assets/Scripts/SpellController.cs" />
+      <File FileName="Assets/Scripts/SpiritController.cs" Line="24" Column="5" />
+      <File FileName="Assets/Scripts/EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BossController.cs" Line="79" Column="33" />
       <File FileName="Assets/Scripts/Boss_Attack.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Boss_SpellController.cs" Line="31" Column="38" />
-      <File FileName="Assets/Scripts/Start_Boss.cs" Line="16" Column="54" />
+      <File FileName="Assets/Scripts/Boss_SpellController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Start_Boss.cs" Line="30" Column="42" />
+      <File FileName="Assets/Scripts/AudioManagerController.cs" Line="28" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="DarkFantasy" expanded="True" selected="True" />
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
           <Node name="DarkFantasy" expanded="True" selected="True" />
         </State>
@@ -25,7 +21,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="90abd89d-3c8a-48d2-af73-3717714358e4" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9e08a40c-20b1-425b-917f-496dfbaffc9e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

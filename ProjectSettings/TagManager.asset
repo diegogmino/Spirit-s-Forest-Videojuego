@@ -11,6 +11,7 @@ TagManager:
   - Boss_Spell
   - Boss
   - Camera
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8156676264705043468}
   - component: {fileID: 8156676264705043471}
+  - component: {fileID: 5341342684754266409}
   m_Layer: 0
   m_Name: SpiritHurt
   m_TagString: Untagged
@@ -127,3 +128,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5341342684754266409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8156676264705043470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c714f46c6641a434ca568e2ce6fcd9fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1

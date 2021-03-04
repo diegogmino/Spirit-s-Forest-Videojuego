@@ -17,11 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608903349704577128, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.103
+      value: 102.08769
       objectReference: {fileID: 0}
     - target: {fileID: 8608903349704577128, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.233
+      value: 9.97
       objectReference: {fileID: 0}
     - target: {fileID: 8608903349704577128, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 7e110fd0620424b10bd3334ffcfbf8ba, type: 2}
     - target: {fileID: 8608903349704577133, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
       propertyPath: life
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8608903349704577133, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
       propertyPath: speed
@@ -74,6 +74,14 @@ PrefabInstance:
     - target: {fileID: 8608903349704577133, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
       propertyPath: maxSpeed
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608903349704577133, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
+      propertyPath: HurtSound
+      value: 
+      objectReference: {fileID: 5305714686925203926, guid: ce14d0b5bb5e9a140952663800a71e34, type: 3}
+    - target: {fileID: 8608903350852317415, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}

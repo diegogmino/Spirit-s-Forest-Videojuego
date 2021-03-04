@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 633d6d37a6281427f8a9322cb4b87abe, type: 2}
     - target: {fileID: 8608903349704577133, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
       propertyPath: life
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8608903349704577133, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
       propertyPath: speed
@@ -115,5 +115,9 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8608903349704577133, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}
+      propertyPath: HurtSound
+      value: 
+      objectReference: {fileID: 5934379858533381248, guid: 0d338fd9dd7b8354f9038e9af8f0409f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bea3fff3cb09c44b0f7ba7f6028f5a, type: 3}

@@ -1,6 +1,4 @@
 Base path: '/Users/Diego/BlackScreen Studios/Unity/2020.2.1f1/Unity.app/Contents', plugins path '/Users/Diego/BlackScreen Studios/Unity/2020.2.1f1/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=4 insize=2515 outsize=1383 ok=1
 
 Quitting shader compiler process

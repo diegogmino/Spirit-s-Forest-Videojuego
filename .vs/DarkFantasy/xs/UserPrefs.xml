@@ -1,27 +1,37 @@
 ﻿<Properties StartupConfiguration="{8AE64A90-87B5-342A-E976-532482D5DCF6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BossController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainMenu/MainMenu.cs">
     <Files>
-      <File FileName="Assets/Scripts/CheckGround.cs" Line="18" Column="20" />
-      <File FileName="Assets/Scripts/SpellController.cs" />
-      <File FileName="Assets/Scripts/SpiritController.cs" Line="24" Column="5" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BossController.cs" Line="79" Column="33" />
-      <File FileName="Assets/Scripts/Boss_Attack.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Boss_SpellController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Start_Boss.cs" Line="30" Column="42" />
-      <File FileName="Assets/Scripts/AudioManagerController.cs" Line="28" Column="34" />
+      <File FileName="Assets/Scripts/Game/SpiritController.cs" Line="189" Column="103" />
+      <File FileName="Assets/Scripts/Game/Start_Boss.cs" Line="20" Column="9" />
+      <File FileName="Assets/Scripts/Game/BossController.cs" Line="98" Column="75" />
+      <File FileName="Assets/Scripts/Game/EnemyController.cs" Line="79" Column="17" />
+      <File FileName="Assets/Scripts/Game/CheckGround.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/SceneLine.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/SoundTimeLife.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/SpellController.cs" Line="17" Column="6" />
+      <File FileName="Assets/Scripts/Game/AudioManagerController.cs" Line="57" Column="33" />
+      <File FileName="Assets/Scripts/MainMenu/MainMenu.cs" Line="21" Column="50" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DarkFantasy" expanded="True" selected="True" />
+          <Node name="DarkFantasy" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Game" expanded="True" />
+                <Node name="MainMenu" expanded="True">
+                  <Node name="MainMenu.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9e08a40c-20b1-425b-917f-496dfbaffc9e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a6f1b0ff-bcdc-4cb8-9406-92150d5d55d9" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

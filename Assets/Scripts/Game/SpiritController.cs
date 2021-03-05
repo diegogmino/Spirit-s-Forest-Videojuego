@@ -20,11 +20,14 @@ public class SpiritController : MonoBehaviour
     public RectTransform posFirstHeart;
     public Canvas canvas;
     public Canvas youDiedCanvas;
+    public Canvas pauseMenuCanvas;
     public int offSet;
     // Sounds
     public GameObject spellSound;
     public GameObject jumpSound;
     public GameObject hurtSound;
+    public GameObject checkpointSound;
+    public GameObject pauseMenuSound;
 
     private Rigidbody2D rbd2;
     private Animator anim;
@@ -36,6 +39,7 @@ public class SpiritController : MonoBehaviour
     private GameObject boss;
     private Animator bossAnimator;
     private AudioManagerController amc;
+    private bool pauseMenu = false; 
 
     // Start is called before the first frame update
     void Start() {
@@ -49,13 +53,15 @@ public class SpiritController : MonoBehaviour
 
         respawnPos = new Vector3(-6, -1, 0);
         youDiedCanvas.enabled = false;
+        pauseMenuCanvas.enabled = false;
 
         Transform posHeart = posFirstHeart;
 
         for (int i = 0; i < numHeart; i++) {
 
             Image newHeart = Instantiate(heart, posHeart.position, Quaternion.identity);
-            newHeart.transform.parent = canvas.transform;
+            //newHeart.transform.parent = canvas.transform;
+            newHeart.transform.SetParent(canvas.transform);
             posHeart.position = new Vector2(posHeart.position.x + offSet, posHeart.position.y);
 
         }
@@ -78,6 +84,20 @@ public class SpiritController : MonoBehaviour
                 jump = true;
                 doubleJump = false;
             }      
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(!pauseMenu) {
+                pauseMenuCanvas.enabled = true;
+                canvas.enabled = false;
+                pauseMenu = true;
+                Instantiate(pauseMenuSound);
+            } else {
+                pauseMenuCanvas.enabled = false;
+                canvas.enabled = true;
+                pauseMenu = false;
+                Instantiate(pauseMenuSound);
+            }
         }
 
         SpiritSpell();
@@ -177,9 +197,10 @@ public class SpiritController : MonoBehaviour
         }
 
         if (collision.gameObject.tag== "Checkpoint") {
-
+            Instantiate(checkpointSound);
             respawnPos = collision.transform.position;
             collision.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+            Destroy(collision.GetComponent<Collider2D>());
 
         }
 
@@ -208,7 +229,10 @@ public class SpiritController : MonoBehaviour
 
     void EnableCollider()
     {
-        collider.enabled = true;
+        if(collider != null) {
+            collider.enabled = true;
+        }
+        
     }
 
 }
